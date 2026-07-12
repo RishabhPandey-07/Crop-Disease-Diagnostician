@@ -1,0 +1,368 @@
+{
+  "corn_gray_leaf_spot": {
+    "display_name": { "en": "Corn — Gray Leaf Spot", "hi": "मक्का — ग्रे लीफ स्पॉट" },
+    "crop": "corn",
+    "severity": "medium",
+    "icon": "🌽",
+    "cause": {
+      "en": "Caused by the fungus Cercospora zeae-maydis. Spreads in warm, humid weather and thrives where corn stalks are left after harvest.",
+      "hi": "यह बीमारी सर्कोस्पोरा ज़ाई-मेडिस नामक फफूंद से होती है। गर्म और नम मौसम में फैलती है, और पुराने डंठलों में पनपती है।"
+    },
+    "treatments": [
+      {
+        "step": 1,
+        "icon": "✂️",
+        "en": "Remove infected leaves by hand and take them far from the field. Do not leave them on the soil.",
+        "hi": "प्रभावित पत्तियों को हाथ से तोड़ें और खेत से दूर ले जाकर नष्ट करें। मिट्टी पर न छोड़ें।"
+      },
+      {
+        "step": 2,
+        "icon": "🫙",
+        "en": "Mix 1 teaspoon baking soda + 1 litre water + 2 drops liquid soap. Spray on all leaves every 7 days.",
+        "hi": "1 चम्मच बेकिंग सोडा + 1 लीटर पानी + 2 बूंद साबुन मिलाएं। हर 7 दिन में सभी पत्तियों पर छिड़कें।"
+      },
+      {
+        "step": 3,
+        "icon": "🍃",
+        "en": "Spray neem oil solution (5 ml neem oil + 1 litre water + drops of soap) as a protective measure on healthy plants.",
+        "hi": "नीम तेल का घोल (5 मिली नीम तेल + 1 लीटर पानी + साबुन की बूंदें) स्वस्थ पौधों पर सुरक्षात्मक छिड़काव करें।"
+      }
+    ],
+    "prevention": {
+      "en": "Rotate corn with soybeans or legumes each season. Remove and burn crop residues after harvest. Ensure wide spacing between plants for air flow.",
+      "hi": "हर मौसम में मक्का की जगह सोयाबीन या दाल उगाएं। फसल कटने के बाद अवशेष जलाएं। पौधों के बीच पर्याप्त दूरी रखें।"
+    }
+  },
+
+  "corn_common_rust": {
+    "display_name": { "en": "Corn — Common Rust", "hi": "मक्का — कॉमन रस्ट" },
+    "crop": "corn",
+    "severity": "medium",
+    "icon": "🌽",
+    "cause": {
+      "en": "Caused by the fungus Puccinia sorghi. Spreads through airborne spores in cool, humid weather (20–25°C). Recognizable by small, brick-red pustules on both sides of leaves.",
+      "hi": "पक्सीनिया सोर्गी फफूंद से होती है। ठंडे और नम मौसम (20-25°C) में हवा के ज़रिए फैलती है। पत्तियों पर छोटे-छोटे लाल-भूरे दाने दिखते हैं।"
+    },
+    "treatments": [
+      {
+        "step": 1,
+        "icon": "🌿",
+        "en": "Remove heavily infected leaves, especially lower ones. Do not compost them — burn or bury them away from the field.",
+        "hi": "ज़्यादा प्रभावित पत्तियाँ, विशेषकर नीचे की, तोड़ दें। इन्हें खाद में न डालें — खेत से दूर जलाएं या दबाएं।"
+      },
+      {
+        "step": 2,
+        "icon": "🫙",
+        "en": "Spray neem oil solution (5 ml neem oil + 1 litre water + 2 drops soap) every 7–10 days until symptoms reduce.",
+        "hi": "नीम तेल का घोल (5 मिली नीम तेल + 1 लीटर पानी + 2 बूंद साबुन) हर 7-10 दिन में स्प्रे करें।"
+      },
+      {
+        "step": 3,
+        "icon": "🪣",
+        "en": "Apply wood ash lightly around the base of plants. Wood ash raises soil pH slightly and has antifungal properties.",
+        "hi": "पौधों की जड़ के पास थोड़ी राख छिड़कें। राख से फफूंद का प्रसार रुकता है।"
+      }
+    ],
+    "prevention": {
+      "en": "Plant rust-resistant corn varieties (check with your local agricultural office). Maintain proper plant spacing so leaves dry quickly after rain.",
+      "hi": "रोग-प्रतिरोधी मक्का की किस्म लगाएं (स्थानीय कृषि कार्यालय से पूछें)। पौधों में पर्याप्त दूरी रखें ताकि बारिश के बाद पत्तियाँ जल्दी सूख सकें।"
+    }
+  },
+
+  "corn_healthy": {
+    "display_name": { "en": "Corn — Healthy ✅", "hi": "मक्का — स्वस्थ ✅" },
+    "crop": "corn",
+    "severity": "none",
+    "icon": "✅",
+    "cause": {
+      "en": "Your corn plant looks healthy! No signs of disease detected.",
+      "hi": "आपका मक्का का पौधा स्वस्थ दिख रहा है! कोई बीमारी नहीं मिली।"
+    },
+    "treatments": [
+      {
+        "step": 1,
+        "icon": "👁️",
+        "en": "Continue monitoring your crop every week. Check the underside of leaves for early signs of pests or spots.",
+        "hi": "हर हफ्ते अपनी फसल की जाँच करते रहें। पत्तियों के नीचे की तरफ कीड़े या धब्बों के शुरुआती संकेत देखें।"
+      },
+      {
+        "step": 2,
+        "icon": "💧",
+        "en": "Water at the base of plants, not on the leaves. This prevents fungal growth.",
+        "hi": "पानी पत्तियों पर नहीं, जड़ के पास दें। इससे फफूंद नहीं पनपती।"
+      }
+    ],
+    "prevention": {
+      "en": "Keep up good practices: crop rotation, proper spacing, and removing dead leaves promptly.",
+      "hi": "अच्छी कृषि प्रथाएं जारी रखें: फसल चक्र, सही दूरी, और सूखी पत्तियों को तुरंत हटाना।"
+    }
+  },
+
+  "potato_early_blight": {
+    "display_name": { "en": "Potato — Early Blight", "hi": "आलू — अर्ली ब्लाइट" },
+    "crop": "potato",
+    "severity": "medium",
+    "icon": "🥔",
+    "cause": {
+      "en": "Caused by the fungus Alternaria solani. Appears first on older, lower leaves as dark brown spots with yellow rings (like a target). Spreads in warm weather with alternating wet and dry periods.",
+      "hi": "ऑल्टर्नेरिया सोलेनी फफूंद से होती है। पहले पुरानी, नीचे की पत्तियों पर पीले घेरे वाले गहरे भूरे धब्बे दिखते हैं। गर्म मौसम में गीले-सूखे चक्र में फैलती है।"
+    },
+    "treatments": [
+      {
+        "step": 1,
+        "icon": "✂️",
+        "en": "Remove all spotted lower leaves immediately. Put them in a bag and dispose of them away from the field.",
+        "hi": "धब्बेदार नीचे की पत्तियाँ तुरंत हटाएं। उन्हें बैग में डालकर खेत से दूर फेंकें।"
+      },
+      {
+        "step": 2,
+        "icon": "🫙",
+        "en": "Spray diluted neem oil (5 ml per 1 litre water + few drops soap) on all remaining leaves every 7 days.",
+        "hi": "पतला नीम तेल (5 मिली प्रति 1 लीटर पानी + साबुन) बची पत्तियों पर हर 7 दिन में स्प्रे करें।"
+      },
+      {
+        "step": 3,
+        "icon": "🪣",
+        "en": "Dust affected areas lightly with wood ash or turmeric powder — both have natural antifungal properties.",
+        "hi": "प्रभावित जगहों पर राख या हल्दी पाउडर हल्के से छिड़कें — दोनों में प्राकृतिक ऐंटीफंगल गुण होते हैं।"
+      }
+    ],
+    "prevention": {
+      "en": "Rotate potatoes with non-nightshade crops (avoid tomato, brinjal in the same field next year). Water at the soil level — never spray water on leaves.",
+      "hi": "आलू के बाद नाइटशेड परिवार के पौधे (टमाटर, बैंगन) उसी खेत में न उगाएं। पानी मिट्टी पर दें — पत्तियों पर पानी न छिड़कें।"
+    }
+  },
+
+  "potato_late_blight": {
+    "display_name": { "en": "Potato — Late Blight ⚠️", "hi": "आलू — लेट ब्लाइट ⚠️" },
+    "crop": "potato",
+    "severity": "high",
+    "icon": "🥔",
+    "cause": {
+      "en": "Caused by Phytophthora infestans (water mold, not a true fungus). VERY contagious — can destroy an entire field in days during cool, wet weather. Look for dark water-soaked patches spreading rapidly. This is the disease that caused the Irish famine.",
+      "hi": "यह बीमारी फाइटोफ्थोरा इन्फेस्टेन्स से होती है। बहुत तेज़ी से फैलती है — ठंडे, गीले मौसम में पूरा खेत कुछ ही दिनों में बर्बाद हो सकता है। गहरे, गीले धब्बे तेज़ी से बढ़ते हैं।"
+    },
+    "treatments": [
+      {
+        "step": 1,
+        "icon": "🚨",
+        "en": "URGENT: Remove and destroy ALL heavily infected plants immediately. Do NOT compost them. Burn them or bury them deep far from the field.",
+        "hi": "तुरंत: बहुत अधिक प्रभावित पौधे तुरंत हटाएं और नष्ट करें। खाद में न डालें। खेत से दूर जलाएं या गहरे दबाएं।"
+      },
+      {
+        "step": 2,
+        "icon": "🧪",
+        "en": "Spray copper sulfate solution (नीला थोथा — 3 grams per 1 litre water) on all remaining plants every 5–7 days. Copper sulfate is available at any agricultural shop.",
+        "hi": "बचे हुए पौधों पर नीला थोथा (3 ग्राम प्रति 1 लीटर पानी) का घोल हर 5-7 दिन में छिड़कें। नीला थोथा हर कृषि दुकान पर मिलता है।"
+      },
+      {
+        "step": 3,
+        "icon": "💧",
+        "en": "Stop all overhead irrigation immediately. Water only at the base of plants. Wet leaves spread this disease very fast.",
+        "hi": "तुरंत ऊपर से पानी देना बंद करें। केवल जड़ में पानी दें। गीली पत्तियाँ इस बीमारी को बहुत तेज़ी से फैलाती हैं।"
+      }
+    ],
+    "prevention": {
+      "en": "Use only certified disease-free seed potatoes. Plant in well-drained, raised beds. Never plant potatoes near tomatoes. Inspect the field every 2–3 days during cool, rainy periods.",
+      "hi": "केवल प्रमाणित बीज आलू का उपयोग करें। अच्छी जल निकासी वाले ऊँचे बेड में लगाएं। टमाटर के पास आलू न लगाएं। ठंड और बारिश के मौसम में हर 2-3 दिन में खेत देखें।"
+    }
+  },
+
+  "potato_healthy": {
+    "display_name": { "en": "Potato — Healthy ✅", "hi": "आलू — स्वस्थ ✅" },
+    "crop": "potato",
+    "severity": "none",
+    "icon": "✅",
+    "cause": {
+      "en": "Your potato plant looks healthy! No signs of disease detected.",
+      "hi": "आपका आलू का पौधा स्वस्थ दिख रहा है! कोई बीमारी नहीं मिली।"
+    },
+    "treatments": [
+      {
+        "step": 1,
+        "icon": "👁️",
+        "en": "Check your plants every week. Look for any dark spots, yellowing, or wilting — especially on the lower leaves.",
+        "hi": "हर हफ्ते पौधों की जाँच करें। खासकर नीचे की पत्तियों पर काले धब्बे, पीलापन या मुरझाना देखें।"
+      },
+      {
+        "step": 2,
+        "icon": "💧",
+        "en": "Water consistently at the base. Avoid waterlogging — potatoes rot easily in standing water.",
+        "hi": "जड़ में नियमित पानी दें। पानी रुकने न दें — आलू खड़े पानी में जल्दी सड़ जाते हैं।"
+      }
+    ],
+    "prevention": {
+      "en": "Rotate crops each season. Use certified seed potatoes. Hill up soil around plants as they grow to protect tubers.",
+      "hi": "हर मौसम में फसल बदलें। प्रमाणित बीज आलू उपयोग करें। पौधों के बढ़ने के साथ जड़ के पास मिट्टी चढ़ाते रहें।"
+    }
+  },
+
+  "tomato_bacterial_spot": {
+    "display_name": { "en": "Tomato — Bacterial Spot", "hi": "टमाटर — बैक्टीरियल स्पॉट" },
+    "crop": "tomato",
+    "severity": "medium",
+    "icon": "🍅",
+    "cause": {
+      "en": "Caused by Xanthomonas bacteria. Spreads through water splashing, rain, and unclean farming tools. Look for small, water-soaked spots that turn dark brown on leaves and fruits.",
+      "hi": "यह ज़ैंथोमोनस बैक्टीरिया से होती है। पानी के छींटे, बारिश और गंदे औज़ारों से फैलती है। पत्तियों और फलों पर छोटे-छोटे गहरे भूरे धब्बे दिखते हैं।"
+    },
+    "treatments": [
+      {
+        "step": 1,
+        "icon": "✂️",
+        "en": "Remove all infected leaves and stems. Clean your cutting tools (knife/scissors) with diluted bleach (1 part bleach + 9 parts water) between cuts.",
+        "hi": "सभी प्रभावित पत्तियाँ और टहनियाँ हटाएं। काटने के बाद चाकू/कैंची को पतले ब्लीच (1 हिस्सा ब्लीच + 9 हिस्सा पानी) से साफ करें।"
+      },
+      {
+        "step": 2,
+        "icon": "🧪",
+        "en": "Spray copper sulfate solution (3 grams per 1 litre water) or neem oil spray (5 ml/litre) every 7 days to prevent spread.",
+        "hi": "नीला थोथा (3 ग्राम प्रति 1 लीटर पानी) या नीम तेल (5 मिली/लीटर) का घोल हर 7 दिन में स्प्रे करें।"
+      },
+      {
+        "step": 3,
+        "icon": "🚫",
+        "en": "Avoid working in the field when plants are wet. Do not touch plants after rain until leaves are dry.",
+        "hi": "पौधे गीले होने पर खेत में काम न करें। बारिश के बाद पत्तियाँ सूखने तक पौधों को न छुएं।"
+      }
+    ],
+    "prevention": {
+      "en": "Use disease-resistant tomato varieties. Rotate crops — do not grow tomatoes in the same field for 2–3 years. Water only at the soil level using drip irrigation if possible.",
+      "hi": "रोग-प्रतिरोधी टमाटर की किस्में लगाएं। 2-3 साल तक एक ही खेत में टमाटर न उगाएं। संभव हो तो टपक सिंचाई से पानी दें।"
+    }
+  },
+
+  "tomato_early_blight": {
+    "display_name": { "en": "Tomato — Early Blight", "hi": "टमाटर — अर्ली ब्लाइट" },
+    "crop": "tomato",
+    "severity": "medium",
+    "icon": "🍅",
+    "cause": {
+      "en": "Caused by the fungus Alternaria solani. Starts on older, lower leaves as dark brown spots with yellow halos. Worsens when leaves stay wet for long periods. Does NOT destroy the plant quickly — manageable if caught early.",
+      "hi": "ऑल्टर्नेरिया सोलेनी फफूंद से होती है। पुरानी, नीचे की पत्तियों पर पीले घेरे वाले भूरे धब्बों से शुरू होती है। पत्तियाँ अधिक देर गीली रहने से बढ़ती है। जल्दी पकड़ में आए तो काबू में रह सकती है।"
+    },
+    "treatments": [
+      {
+        "step": 1,
+        "icon": "✂️",
+        "en": "Remove all spotted lower leaves right away. Put them in a bag and throw them away from the field — do not compost.",
+        "hi": "धब्बेदार नीचे की सभी पत्तियाँ तुरंत हटाएं। बैग में डालकर खेत से दूर फेंकें — खाद में न डालें।"
+      },
+      {
+        "step": 2,
+        "icon": "🫙",
+        "en": "Spray neem oil solution (5 ml neem oil + 1 litre water + 2 drops liquid soap) on all remaining leaves. Apply every 7 days. Spray in the morning so leaves dry before evening.",
+        "hi": "नीम तेल का घोल (5 मिली नीम तेल + 1 लीटर पानी + 2 बूंद साबुन) बची पत्तियों पर हर 7 दिन में स्प्रे करें। सुबह करें ताकि पत्तियाँ शाम तक सूख जाएं।"
+      },
+      {
+        "step": 3,
+        "icon": "🪨",
+        "en": "Put straw or dry grass mulch around the base of plants. This stops soil from splashing onto leaves during watering or rain, which is how the fungus spreads.",
+        "hi": "पौधों की जड़ के पास पुआल या सूखी घास बिछाएं। इससे पानी या बारिश में मिट्टी के छींटे पत्तियों पर नहीं पड़ते, जिससे फफूंद फैलती है।"
+      }
+    ],
+    "prevention": {
+      "en": "Water only at the base of plants — never on the leaves. Space plants 45–60 cm apart so air can flow between them. Prune lower branches once plants are 30 cm tall.",
+      "hi": "पानी केवल जड़ में दें — पत्तियों पर नहीं। पौधों के बीच 45-60 सेमी की दूरी रखें। पौधे 30 सेमी लंबे होने पर नीचे की टहनियाँ काट दें।"
+    }
+  },
+
+  "tomato_late_blight": {
+    "display_name": { "en": "Tomato — Late Blight ⚠️", "hi": "टमाटर — लेट ब्लाइट ⚠️" },
+    "crop": "tomato",
+    "severity": "high",
+    "icon": "🍅",
+    "cause": {
+      "en": "Caused by Phytophthora infestans. Spreads VERY fast in cool, wet weather. Dark patches appear on leaves and stems, often with a white mold on the underside. Can destroy an entire crop in days if not acted on immediately.",
+      "hi": "फाइटोफ्थोरा इन्फेस्टेन्स से होती है। ठंडे, गीले मौसम में बहुत तेज़ी से फैलती है। पत्तियों और तनों पर काले धब्बे, और नीचे की तरफ सफेद फफूंद दिखती है। तुरंत कार्रवाई न हो तो पूरी फसल बर्बाद हो सकती है।"
+    },
+    "treatments": [
+      {
+        "step": 1,
+        "icon": "🚨",
+        "en": "URGENT: Remove all heavily infected plants right now. Do NOT compost them. Burn them or bury them deep, far from the field.",
+        "hi": "तुरंत: ज़्यादा प्रभावित पौधे अभी हटाएं। खाद में न डालें। खेत से दूर जलाएं या गहरे दबाएं।"
+      },
+      {
+        "step": 2,
+        "icon": "🧪",
+        "en": "Spray copper sulfate solution (नीला थोथा — 3 grams per 1 litre water) on ALL remaining plants every 5–7 days, including on the underside of leaves.",
+        "hi": "बचे सभी पौधों पर नीला थोथा (3 ग्राम प्रति 1 लीटर पानी) हर 5-7 दिन में स्प्रे करें — पत्तियों के नीचे भी।"
+      },
+      {
+        "step": 3,
+        "icon": "🌿",
+        "en": "Remove all fallen leaves from the ground around plants. Pick them up and dispose of them away from the field.",
+        "hi": "पौधों के आसपास ज़मीन पर गिरी पत्तियाँ उठाएं और खेत से दूर फेंकें।"
+      }
+    ],
+    "prevention": {
+      "en": "Plant only certified healthy seedlings. Avoid planting tomatoes near potato fields (they share this disease). Inspect your crop every 2–3 days during monsoon season.",
+      "hi": "केवल प्रमाणित स्वस्थ पौध लगाएं। आलू के खेत के पास टमाटर न लगाएं (दोनों में यही बीमारी होती है)। मानसून में हर 2-3 दिन में खेत देखें।"
+    }
+  },
+
+  "tomato_leaf_mold": {
+    "display_name": { "en": "Tomato — Leaf Mold", "hi": "टमाटर — लीफ मोल्ड" },
+    "crop": "tomato",
+    "severity": "medium",
+    "icon": "🍅",
+    "cause": {
+      "en": "Caused by the fungus Passalora fulva. Appears as yellow patches on top of leaves and a grey-brown velvety mold on the underside. Thrives in humid, enclosed conditions like plastic-covered greenhouses or dense plantings.",
+      "hi": "पासालोरा फुल्वा फफूंद से होती है। पत्तियों के ऊपर पीले धब्बे और नीचे भूरी-सफेद रोयेंदार फफूंद दिखती है। नम, बंद जगहों जैसे प्लास्टिक शेड या घनी खेती में पनपती है।"
+    },
+    "treatments": [
+      {
+        "step": 1,
+        "icon": "💨",
+        "en": "Immediately improve air flow — remove side covers of polytunnel/greenhouse, or prune dense plants to open them up.",
+        "hi": "तुरंत हवा आने दें — पॉलीटनल/ग्रीनहाउस के किनारे खोलें, या घने पौधों की छँटाई करें।"
+      },
+      {
+        "step": 2,
+        "icon": "✂️",
+        "en": "Remove and destroy all leaves showing symptoms on both surfaces.",
+        "hi": "दोनों तरफ लक्षण दिखने वाली सभी पत्तियाँ हटाएं और नष्ट करें।"
+      },
+      {
+        "step": 3,
+        "icon": "🫙",
+        "en": "Spray diluted neem oil (5 ml per 1 litre water + drops of soap) as a protective treatment on remaining leaves every 7–10 days.",
+        "hi": "बची पत्तियों पर पतला नीम तेल (5 मिली प्रति 1 लीटर पानी + साबुन) हर 7-10 दिन में सुरक्षात्मक छिड़काव करें।"
+      }
+    ],
+    "prevention": {
+      "en": "Keep humidity below 85% in covered growing areas. Space plants at least 50 cm apart. Water early in the morning so leaves dry out during the day.",
+      "hi": "बंद उगाने की जगह में नमी 85% से कम रखें। पौधों के बीच कम से कम 50 सेमी की दूरी रखें। सुबह जल्दी पानी दें ताकि दिन में पत्तियाँ सूख जाएं।"
+    }
+  },
+
+  "tomato_healthy": {
+    "display_name": { "en": "Tomato — Healthy ✅", "hi": "टमाटर — स्वस्थ ✅" },
+    "crop": "tomato",
+    "severity": "none",
+    "icon": "✅",
+    "cause": {
+      "en": "Your tomato plant looks healthy! No signs of disease detected.",
+      "hi": "आपका टमाटर का पौधा स्वस्थ दिख रहा है! कोई बीमारी नहीं मिली।"
+    },
+    "treatments": [
+      {
+        "step": 1,
+        "icon": "👁️",
+        "en": "Check your plants every week. Look closely at the undersides of leaves for spots, powdery growth, or tiny insects.",
+        "hi": "हर हफ्ते पौधों की जाँच करें। पत्तियों के नीचे धब्बे, पाउडर जैसी वृद्धि या छोटे कीड़े ध्यान से देखें।"
+      },
+      {
+        "step": 2,
+        "icon": "🍃",
+        "en": "As a preventive measure, spray diluted neem oil (5 ml per 1 litre water) once every 2–3 weeks. This deters pests and early fungal spores.",
+        "hi": "सुरक्षात्मक उपाय के रूप में हर 2-3 हफ्ते में पतला नीम तेल (5 मिली प्रति 1 लीटर पानी) स्प्रे करें। इससे कीड़े और शुरुआती फफूंद दूर रहती है।"
+      }
+    ],
+    "prevention": {
+      "en": "Keep up good practices: water at the base, remove dead leaves promptly, maintain plant spacing, and rotate crops each season.",
+      "hi": "अच्छी प्रथाएं जारी रखें: जड़ में पानी दें, सूखी पत्तियाँ तुरंत हटाएं, पौधों के बीच दूरी रखें, और हर मौसम में फसल बदलें।"
+    }
+  }
+}

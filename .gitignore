@@ -1,0 +1,32 @@
+# ── Node / Frontend ──────────────────────────────────────────
+node_modules/
+dist/
+.vite/
+*.local
+
+# ── Python / ML ───────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+.venv/
+
+# ── Model files (large binaries — user downloads from Colab) ──
+app/public/model/*.bin
+app/public/model/model.json
+# Keep labels.json tracked (small, needed for reference)
+!app/public/model/labels.json
+# Keep the placeholder README
+!app/public/model/.gitkeep
+
+# ── Kaggle credentials — NEVER commit these ───────────────────
+kaggle.json
+*.kaggle
+
+# ── OS / IDE ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,16 @@
+# Core ML
+tensorflow==2.15.0
+tensorflow-datasets==4.9.4
+tensorflowjs==4.15.0
+
+# Data science
+numpy==1.26.4
+pandas==2.2.0
+scikit-learn==1.4.0
+matplotlib==3.8.2
+seaborn==0.13.2
+Pillow==10.2.0
+
+# Utilities
+tqdm==4.66.1
+ipywidgets==8.1.1
