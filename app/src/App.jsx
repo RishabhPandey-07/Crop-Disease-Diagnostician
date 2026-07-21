@@ -81,9 +81,10 @@ export default function App() {
     setTreatment(null);
     setInferError(null);
 
-    if (!isReady) return; // model not loaded yet — user will see "Scan" button
-
-    await runInference(canvasElement);
+    // Always run inference — if model not ready yet, show Scan button as fallback
+    if (isReady) {
+      await runInference(canvasElement);
+    }
   }, [isReady]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Core inference flow ───────────────────────────────────────────────────
@@ -260,7 +261,7 @@ export default function App() {
         )}
 
         {/* ── Results section ── */}
-        {result && treatment && (
+        {result && (
           <section ref={resultRef} aria-label="Diagnosis result" className="flex flex-col gap-4">
             <ResultCard
               result={result}
@@ -268,7 +269,20 @@ export default function App() {
               previewUrl={previewUrl}
               lang={lang}
             />
-            <TreatmentCard treatment={treatment} lang={lang} />
+            {treatment
+              ? <TreatmentCard treatment={treatment} lang={lang} />
+              : (
+                <div className="card px-5 py-4 border border-yellow-200 bg-yellow-50">
+                  <p className="font-semibold text-yellow-800">🔍 Detected: {result.classKey}</p>
+                  <p className="text-sm text-yellow-700 mt-1">
+                    Confidence: {(result.confidence * 100).toFixed(1)}%
+                  </p>
+                  <p className="text-xs text-yellow-600 mt-2">
+                    Treatment details unavailable for this class.
+                  </p>
+                </div>
+              )
+            }
 
             {/* Scan again button */}
             <button
