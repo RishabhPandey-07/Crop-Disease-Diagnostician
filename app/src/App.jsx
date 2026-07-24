@@ -153,6 +153,13 @@ export default function App() {
       errorTitle: 'Detection failed',
       offlineBadge: 'Offline Mode — fully works without internet',
       howItWorks: '📸 Take a photo → 🤖 AI detects disease → 💊 Get treatment — all offline.',
+      supportedTitle: 'Supported Plants Only',
+      supportedNote: 'This AI is trained for 3 crops only. Results for other plants (chilli, wheat, rice etc.) will be incorrect.',
+      supportedCrops: [
+        { emoji: '🌽', name: 'Corn', diseases: 'Gray Leaf Spot, Common Rust' },
+        { emoji: '🥔', name: 'Potato', diseases: 'Early Blight, Late Blight' },
+        { emoji: '🍅', name: 'Tomato', diseases: 'Bacterial Spot, Early Blight, Late Blight, Leaf Mold' },
+      ],
     },
     hi: {
       appName: 'फसल डॉक्टर',
@@ -165,6 +172,13 @@ export default function App() {
       errorTitle: 'पहचान विफल',
       offlineBadge: 'ऑफलाइन मोड — बिना इंटरनेट के काम करता है',
       howItWorks: '📸 फोटो लें → 🤖 AI बीमारी पहचाने → 💊 उपचार पाएं — पूरी तरह ऑफलाइन।',
+      supportedTitle: 'सिर्फ इन फसलों के लिए',
+      supportedNote: 'यह AI सिर्य 3 फसलों पर प्रशिक्षित है। अन्य पौधों (मिर्च, गेहूं, चावल आदि) के लिए परिणाम गलत होंगे।',
+      supportedCrops: [
+        { emoji: '🌽', name: 'मक्का', diseases: 'ग्रे लीफ स्पॉट, कॉमन रस्ट' },
+        { emoji: '🥔', name: 'आलू', diseases: 'अर्ली ब्लाइट, लेट ब्लाइट' },
+        { emoji: '🍅', name: 'टमाटर', diseases: 'बैक्टीरियल स्पॉट, अर्ली ब्लाइट, लेट ब्लाइट, लीफ मोल्ड' },
+      ],
     },
   };
   const t = text[lang] ?? text.en;
@@ -224,7 +238,26 @@ export default function App() {
           </div>
         )}
 
-        {/* ── Camera / Upload section ── */}
+        {/* -- Supported Plants Info Card -- */}
+        <div className="card px-5 py-4 border border-brand-200 bg-brand-50 animate-fade-in">
+          <p className="font-bold text-brand-800 text-sm mb-2" lang={lang}>
+            ⚠️ {t.supportedTitle}
+          </p>
+          <p className="text-xs text-brand-700 mb-3" lang={lang}>{t.supportedNote}</p>
+          <div className="flex gap-3 flex-wrap">
+            {t.supportedCrops.map(crop => (
+              <div key={crop.name} className="flex items-start gap-1.5 bg-white rounded-xl px-3 py-2 border border-brand-100 flex-1 min-w-[140px]">
+                <span className="text-lg">{crop.emoji}</span>
+                <div>
+                  <p className="font-semibold text-brand-800 text-xs" lang={lang}>{crop.name}</p>
+                  <p className="text-[10px] text-gray-500" lang={lang}>{crop.diseases}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* -- Camera / Upload section -- */}
         <section aria-label="Scan a leaf">
           <Camera
             onImageReady={handleImageReady}
