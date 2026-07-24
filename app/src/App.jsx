@@ -38,8 +38,11 @@ export default function App() {
   const [treatmentsLoaded, setTreatmentsLoaded] = useState(false);
 
   useEffect(() => {
-    loadTreatments()
-      .then(data => { setTreatments(data); setTreatmentsLoaded(true); })
+    // Try both paths in case of deployment path differences
+    const tryFetch = (path) => fetch(path).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+    tryFetch('/treatments.json')
+      .catch(() => tryFetch('./treatments.json'))
+      .then(data => { console.log('Treatments loaded:', Object.keys(data).length, 'entries'); setTreatments(data); setTreatmentsLoaded(true); })
       .catch(err => console.error('Treatment DB load error:', err));
   }, []);
 
@@ -104,12 +107,12 @@ export default function App() {
       setResult(inferResult);
       setTreatment(entry ?? null);
 
-      // Save to history regardless of whether treatment was found
-        addScan(
-          { src: target.toDataURL ? target.toDataURL('image/jpeg', 0.85) : previewUrl },
-          inferResult,
-          entry ?? { name: { en: inferResult.classKey, hi: inferResult.classKey } }
-        );
+      // Save to history — pass the canvas element directly so createThumbnail can drawImage it
+      addScan(
+        target,
+        inferResult,
+        entry ?? null
+      );
 
       // Scroll result into view (smooth)
       setTimeout(() => {

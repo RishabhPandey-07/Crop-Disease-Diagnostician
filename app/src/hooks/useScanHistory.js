@@ -49,9 +49,12 @@ function writeHistory(entries) {
  */
 function createThumbnail(imageElement, maxWidth = 200) {
   const canvas = document.createElement('canvas');
-  const scale = maxWidth / imageElement.naturalWidth;
-  canvas.width = maxWidth;
-  canvas.height = Math.round(imageElement.naturalHeight * scale);
+  // canvas elements use .width/.height; img elements use .naturalWidth/.naturalHeight
+  const srcWidth  = imageElement.naturalWidth  || imageElement.width  || maxWidth;
+  const srcHeight = imageElement.naturalHeight || imageElement.height || maxWidth;
+  const scale = maxWidth / srcWidth;
+  canvas.width  = maxWidth;
+  canvas.height = Math.round(srcHeight * scale);
   const ctx = canvas.getContext('2d');
   ctx.drawImage(imageElement, 0, 0, canvas.width, canvas.height);
   return canvas.toDataURL('image/jpeg', 0.7);
