@@ -104,12 +104,12 @@ export default function App() {
       setResult(inferResult);
       setTreatment(entry ?? null);
 
-      // Save to history
-      if (entry) {
-        const img = new Image();
-        img.src = target.toDataURL ? target.toDataURL('image/jpeg', 0.85) : previewUrl;
-        img.onload = () => addScan(img, inferResult, entry);
-      }
+      // Save to history regardless of whether treatment was found
+        addScan(
+          { src: target.toDataURL ? target.toDataURL('image/jpeg', 0.85) : previewUrl },
+          inferResult,
+          entry ?? { name: { en: inferResult.classKey, hi: inferResult.classKey } }
+        );
 
       // Scroll result into view (smooth)
       setTimeout(() => {
@@ -262,6 +262,7 @@ export default function App() {
           <Camera
             onImageReady={handleImageReady}
             isProcessing={isProcessing}
+            previewUrl={previewUrl}
             lang={lang}
           />
         </section>
@@ -342,15 +343,17 @@ export default function App() {
           </div>
         )}
 
-        {/* ── Scan History ── */}
-        <section aria-label="Scan history">
-          <HistoryPanel
-            history={history}
-            onSelect={handleHistorySelect}
-            lang={lang}
-            onClear={clearHistory}
-          />
-        </section>
+        {/* -- Scan History -- only show when there are entries */}
+        {history.length > 0 && (
+          <section aria-label="Scan history">
+            <HistoryPanel
+              history={history}
+              onSelect={handleHistorySelect}
+              lang={lang}
+              onClear={clearHistory}
+            />
+          </section>
+        )}
 
       </main>
 

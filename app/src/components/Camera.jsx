@@ -1,27 +1,9 @@
 import { useRef, useState, useCallback } from 'react';
 
-/**
- * Camera — handles both file upload and direct camera capture.
- *
- * For mobile browsers, `capture="environment"` on the file input opens
- * the rear camera directly. This is the simplest approach that works
- * across all mobile browsers without requiring WebRTC.
- *
- * For desktop, users get the standard file picker.
- *
- * When an image is selected, it is drawn onto a hidden canvas element
- * to normalize the image (handles EXIF rotation on mobile), and then
- * the canvas element is passed to the parent via onImageReady.
- *
- * @param {function} onImageReady(canvasElement, previewUrl) - called with the
- *   processed canvas and a preview URL for display.
- * @param {boolean} isProcessing - disables the UI during inference.
- * @param {string} lang - 'en' | 'hi'
- */
-export default function Camera({ onImageReady, isProcessing, lang }) {
-  const fileInputRef = useRef(null);
+export default function Camera({ onImageReady, isProcessing, previewUrl, lang }) {
+  const fileInputRef  = useRef(null);
   const cameraInputRef = useRef(null);
-  const canvasRef = useRef(null);
+  const canvasRef     = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
 
   const text = {
@@ -31,6 +13,7 @@ export default function Camera({ onImageReady, isProcessing, lang }) {
       uploadBtn: 'Upload Photo',
       cameraBtn: 'Take Photo',
       dragHint: 'or drag & drop an image here',
+      changePhoto: 'Change Photo',
     },
     hi: {
       title: 'पत्ता स्कैन करें',
@@ -38,30 +21,22 @@ export default function Camera({ onImageReady, isProcessing, lang }) {
       uploadBtn: 'फोटो अपलोड करें',
       cameraBtn: 'फोटो लें',
       dragHint: 'या यहाँ फोटो खींचकर छोड़ें',
+      changePhoto: 'फोटो बदलें',
     },
   };
 
   const t = text[lang] ?? text.en;
 
-  /**
-   * Decode the selected file into a canvas element.
-   * Using a canvas normalizes EXIF rotation (common on mobile camera photos)
-   * and gives us a clean HTMLCanvasElement for tf.browser.fromPixels().
-   */
   const processFile = useCallback((file) => {
     if (!file || !file.type.startsWith('image/')) return;
-
     const reader = new FileReader();
     reader.onload = (e) => {
       const img = new Image();
       img.onload = () => {
         const canvas = canvasRef.current;
-        // Draw at original resolution (TFJS will resize to 224×224 during inference)
-        canvas.width = img.naturalWidth;
+        canvas.width  = img.naturalWidth;
         canvas.height = img.naturalHeight;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0);
-        // Pass canvas element + preview data URL to parent
+        canvas.getContext('2d').drawImage(img, 0, 0);
         onImageReady(canvas, canvas.toDataURL('image/jpeg', 0.85));
       };
       img.src = e.target.result;
@@ -70,11 +45,9 @@ export default function Camera({ onImageReady, isProcessing, lang }) {
   }, [onImageReady]);
 
   const handleFileChange = (e) => processFile(e.target.files?.[0]);
-
-  // Drag and drop support
-  const handleDragOver = (e) => { e.preventDefault(); setIsDragging(true); };
+  const handleDragOver  = (e) => { e.preventDefault(); setIsDragging(true); };
   const handleDragLeave = () => setIsDragging(false);
-  const handleDrop = (e) => {
+  const handleDrop      = (e) => {
     e.preventDefault();
     setIsDragging(false);
     processFile(e.dataTransfer.files?.[0]);
@@ -91,38 +64,75 @@ export default function Camera({ onImageReady, isProcessing, lang }) {
       </div>
 
       <div className="card-body flex flex-col gap-4">
-        {/* Drag-and-drop upload zone */}
-        <div
-          className={`upload-zone ${isDragging ? 'drag-over' : ''} ${isProcessing ? 'pointer-events-none opacity-60' : ''}`}
-          onDragOver={handleDragOver}
-          onDragLeave={handleDragLeave}
-          onDrop={handleDrop}
-          role="button"
-          tabIndex={0}
-          aria-label={t.uploadBtn}
-          onClick={() => fileInputRef.current?.click()}
-          onKeyDown={(e) => e.key === 'Enter' && fileInputRef.current?.click()}
-        >
-          <div className="upload-zone-icon">
-            <span>🍃</span>
+
+        {/* ── Upload / Preview Zone ── */}
+        {previewUrl ? (
+          /* Show uploaded image preview */
+          <div className="relative rounded-2xl overflow-hidden border-2 border-brand-300 bg-black"
+               style={{ minHeight: '220px' }}>
+            <img
+              src={previewUrl}
+              alt="Uploaded leaf"
+              style={{
+                width: '100%',
+                height: '220px',
+                objectFit: 'contain',
+                display: 'block',
+              }}
+            />
+            {/* Change photo button overlay */}
+            {!isProcessing && (
+              <button
+                className="absolute bottom-2 right-2 bg-white bg-opacity-90 text-brand-700
+                           text-xs font-semibold px-3 py-1.5 rounded-full shadow-md
+                           border border-brand-200 hover:bg-brand-50 transition-colors"
+                onClick={() => fileInputRef.current?.click()}
+                lang={lang}
+              >
+                🔄 {t.changePhoto}
+              </button>
+            )}
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              className="hidden"
+              aria-hidden="true"
+            />
           </div>
-          <p className="text-sm text-brand-700 font-medium text-center" lang={lang}>
-            {t.dragHint}
-          </p>
-          {/* Hidden file input for gallery pick */}
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*"
-            onChange={handleFileChange}
-            className="hidden"
-            aria-hidden="true"
-          />
-        </div>
+        ) : (
+          /* Show drag-drop zone when no image */
+          <div
+            className={`upload-zone ${isDragging ? 'drag-over' : ''} ${isProcessing ? 'pointer-events-none opacity-60' : ''}`}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+            role="button"
+            tabIndex={0}
+            aria-label={t.uploadBtn}
+            onClick={() => fileInputRef.current?.click()}
+            onKeyDown={(e) => e.key === 'Enter' && fileInputRef.current?.click()}
+          >
+            <div className="upload-zone-icon">
+              <span>🍃</span>
+            </div>
+            <p className="text-sm text-brand-700 font-medium text-center" lang={lang}>
+              {t.dragHint}
+            </p>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              className="hidden"
+              aria-hidden="true"
+            />
+          </div>
+        )}
 
         {/* Action buttons */}
         <div className="grid grid-cols-2 gap-3">
-          {/* Camera capture (opens rear camera on mobile) */}
           <button
             className="btn-primary w-full text-base"
             disabled={isProcessing}
@@ -131,7 +141,6 @@ export default function Camera({ onImageReady, isProcessing, lang }) {
           >
             <span aria-hidden="true">📷</span>
             <span lang={lang}>{t.cameraBtn}</span>
-            {/* Hidden input with capture="environment" for rear camera */}
             <input
               ref={cameraInputRef}
               type="file"
@@ -143,7 +152,6 @@ export default function Camera({ onImageReady, isProcessing, lang }) {
             />
           </button>
 
-          {/* Gallery upload */}
           <button
             className="btn-secondary w-full text-base"
             disabled={isProcessing}
@@ -156,7 +164,6 @@ export default function Camera({ onImageReady, isProcessing, lang }) {
         </div>
       </div>
 
-      {/* Hidden canvas used to normalize images before inference */}
       <canvas ref={canvasRef} className="hidden" aria-hidden="true" />
     </div>
   );
